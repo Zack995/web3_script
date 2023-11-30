@@ -1,4 +1,4 @@
-![image](https://github.com/Zack995/neat_script/assets/20507932/8695915b-8b47-4230-81c0-89b117b24159)# neat_script
+# neat_script
 step 0
 https://nodejs.cn/download/ or https://nodejs.org/en
 Download, install, and execute the command; if the correct version is displayed, the installation is successful.
