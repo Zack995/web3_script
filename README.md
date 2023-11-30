@@ -11,6 +11,8 @@ npm install near-api-js
 step 2
 node near.js
 
+----------------------------------------------
+
 第一步是安装 nodejs 环境，如果有那就跳过
 https://nodejs.cn/download/ or https://nodejs.org/en
 
