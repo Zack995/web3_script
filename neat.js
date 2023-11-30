@@ -17,7 +17,7 @@ async function runner(
   maxCount = 500000000, // 最大mint次数 近乎于无限
   maxErrorCount = 500000000 // 最大出错次数，容忍RPC节点失败 近乎于无限
 ) {
-  const { keyStores, KeyPair, connect, Contract } = nearAPI;
+  const { keyStores, KeyPair, connect, Contract, providers } = nearAPI;
   const myKeyStore = new keyStores.InMemoryKeyStore();
   // creates a public / private key pair using the provided private key
   const keyPair = KeyPair.fromString(PRIVATE_KEY);
@@ -36,7 +36,9 @@ async function runner(
     explorerUrl: "https://explorer.mainnet.near.org",
   };
   const nearConnection = await connect(connectionConfig);
-
+  const provider = new providers.JsonRpcProvider(
+    "https://rpc.mainnet.near.org"
+  );
   const account = await nearConnection.account(sender);
   const balance = await account.getAccountBalance();
   console.log(balance);
@@ -53,22 +55,39 @@ async function runner(
       console.log(from, "Maximum execution reached.");
       return;
     }
-
     try {
-      const res = await contract.inscribe({
-        args: {
-          p: "nrc-20",
-          op: "mint",
-          tick: "neat",
-          amt: "100000000",
-        },
-        gas: "300000000000000",
-      });
-      console.log("res", res);
-      // 等待一秒再执行下一次 注释掉就只执行一次
-      setTimeout(() => {
-        sendTransaction(count + 1);
-      }, 1000);
+      const status = await provider.status();
+      const gasPrice = await provider.gasPrice(
+        status.sync_info.latest_block_height
+      );
+      //175263878 大概 0.0008 near
+      if (gasPrice.gas_price > 200136057) {
+        console.log(
+          "gas too many wait run now block_height",
+          status.sync_info.latest_block_height,
+          "gas_price",
+          gasPrice.gas_price
+        );
+        // 等待一秒再执行下一次 注释掉就只执行一次
+        setTimeout(() => {
+          sendTransaction(count + 1);
+        }, 1000);
+      } else {
+        const res = await contract.inscribe({
+          args: {
+            p: "nrc-20",
+            op: "mint",
+            tick: "neat",
+            amt: "100000000",
+          },
+          gas: "300000000000000",
+        });
+        console.log("res", res);
+        // 等待一秒再执行下一次 注释掉就只执行一次
+        setTimeout(() => {
+          sendTransaction(count + 1);
+        }, 1000);
+      }
     } catch (error) {
       console.error(sender, "error:", error.message || error);
       errorCount++;
