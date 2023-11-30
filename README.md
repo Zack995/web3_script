@@ -9,4 +9,4 @@ step 1
 npm install near-api-js
 
 step 2
-node near-api-js
+node near.js
