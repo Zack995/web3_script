@@ -1,4 +1,4 @@
-# avax_asct_script
+# okt_okts_script
 ##### step 0
 https://nodejs.cn/download/ or https://nodejs.org/en
 Download, install, and execute the command; if the correct version is displayed, the installation is successful.
