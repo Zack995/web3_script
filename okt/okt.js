@@ -48,7 +48,7 @@ async function runner(sender, privateKey) {
 
       const from = web3.eth.accounts.privateKeyToAccount(privateKey).address;
       //   const gasPrice = await web3.eth.getGasPrice();
-      const gasPrice = parseInt(await web3.eth.getGasPrice()) * 100 + "";
+      const gasPrice = parseInt(await web3.eth.getGasPrice()) * 1.2 + "";
       //   console.log(
       //     from,
       //     "sendTransaction nonce",
