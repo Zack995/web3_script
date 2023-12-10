@@ -89,7 +89,7 @@ async function runner(sender, privateKey) {
     const gasPrice = parseInt(parseInt(await web3.eth.getGasPrice()) * 2) + "";
     let nonce = await web3.eth.getTransactionCount(sender);
     for (let i = 0; i < batchRes; i++) {
-      sendTransaction(nonce + i, privateKey, gasPrice);
+        sendTransaction(parseInt(nonce) + i, privateKey, gasPrice);
     }
     setTimeout(() => {
       runsend();
