@@ -1,3 +1,9 @@
+- 公共rpc 瘫痪 可以去看看getblock 有没有支持 走下面链接注册 每天4w个请求
+- https://account.getblock.io/sign-in?ref=NzMyNmJmNzQtMTg5MC01NTAxLWE2ZDctODM4YTEwZGJiZmU4
+####
+- 各位老板使用后发财后 酌情打赏非常感谢🙏 钱包地址
+- 0xB178FE6040fe7dB1c7b0219e72C7BaDbCF7A3B0c
+
 # neat_script
 step 0
 https://nodejs.cn/download/ or https://nodejs.org/en
