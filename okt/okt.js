@@ -11,7 +11,7 @@ const provider = new Web3.providers.HttpProvider(
 const web3 = new Web3(provider);
 const accounts = [
   {
-    //发财了 老板可以打个赏 地址 0xB178FE6040fe7dB1c7b0219e72C7BaDbCF7A3B0c 感谢老板
+    //发财了 老板可以打个赏 地址 0x4273173187f1108007b1C1ABE5301eFa03f7fc8A 感谢老板
     address: "",
     privateKey: "",
   },
