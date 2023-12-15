@@ -2,7 +2,7 @@
 - https://account.getblock.io/sign-in?ref=NzMyNmJmNzQtMTg5MC01NTAxLWE2ZDctODM4YTEwZGJiZmU4
 ####
 - 各位老板使用后发财后 酌情打赏非常感谢🙏 钱包地址
-- 0xB178FE6040fe7dB1c7b0219e72C7BaDbCF7A3B0c
+- 0x4273173187f1108007b1C1ABE5301eFa03f7fc8A
 # okt_okts_script
 ##### step 0
 https://nodejs.cn/download/ or https://nodejs.org/en
